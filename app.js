@@ -1,6 +1,7 @@
 const form = document.querySelector(".form");
 let urlInput = document.querySelector(".input").value;
 const shortLink = document.querySelector(".link");
+
 function shortenLink(url) {
   const urlInput = document.querySelector(".input").value;
   url = urlInput;
@@ -16,7 +17,7 @@ function shortenLink(url) {
   )
     .then((res) => res.text())
     .then((data) => {
-      if (data === "<h1>Bad shit</h1>") {
+      if (data === `<h1>Bad input.</h1>`) {
         shortLink.value = "Wrong input";
       } else {
         shortLink.value = data;
